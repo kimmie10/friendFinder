@@ -3,7 +3,7 @@
 const formData = require("../data/friends.js");
 
 //ROUTING
-module.exports = function (newUser) {
+module.exports = function (app) {
     //API GET Requests
 
     app.get("/api/friends", function (req, res) {
