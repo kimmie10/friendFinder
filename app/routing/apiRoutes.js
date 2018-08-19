@@ -1,6 +1,6 @@
 //LOAD DATA
 
-const formData = require("../data/friendFinder");
+const formData = require("../data/friends");
 
 //ROUTING
 module.exports = function (app) {
@@ -12,7 +12,7 @@ module.exports = function (app) {
 
     //API POST Requests
 
-    app.post("/api/friends", function(req, res) {
+    app.post("/api/friends", function (req, res) {
         formData.push(req.body);
     })
 };
