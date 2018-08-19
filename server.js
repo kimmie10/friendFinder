@@ -9,20 +9,22 @@ const path = require("path");
 let app = express();
 
 //Port set
-let PORT = process.env.PORT || 8080;
+let PORT = process.env.PORT || 3000;
 
 //Data parsing for Express app
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+// app.use(bodyParser.text());
+// app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 //Router directions
 
-require("./app/routing/apiRoutes")(app);
-require("./app/routing/htmlRoutes")(app);
+require("./app/routing/apiRoutes.js")(app);
+require("./app/routing/htmlRoutes.js")(app);
 
 //Listener
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
     console.log("App listening on PORT: " + PORT);
 });
 
